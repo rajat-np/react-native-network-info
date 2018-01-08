@@ -14,7 +14,7 @@ let headers = querystring.stringify({
 });
 
 
-getIP = async() => {
+const getExtIPAddress = async() => {
       await axios.get('http://bot.whatismyipaddress.com/',headers).
         then(function (response) {
           data.IP = response.data;
@@ -23,3 +23,6 @@ getIP = async() => {
         data.status = false;
         });
   }
+export default {
+  getExtIPAddress
+}
