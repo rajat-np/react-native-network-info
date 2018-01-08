@@ -1,6 +1,7 @@
 'use strict';
 
 import { NativeModules } from 'react-native';
+import ExtIPModule from './fetch';
 const { RNNetworkInfo } = NativeModules;
 
 const NetworkInfo = {
@@ -18,7 +19,9 @@ const NetworkInfo = {
 
   getIPV4Address(ip) {
     RNNetworkInfo.getIPV4Address(ip);
+  },
+  getExtIPAddress(ip) {
+    ExtIPModule.getExtIPAddress(ip);
   }
 }
-
 module.exports = { NetworkInfo }
